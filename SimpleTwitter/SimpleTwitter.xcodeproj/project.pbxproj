@@ -21,6 +21,9 @@
 		DF25096E1A9A61F9009876A1 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF25096D1A9A61F9009876A1 /* TweetTableViewCell.swift */; };
 		DF2509711A9A74F8009876A1 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2509701A9A74F8009876A1 /* TweetDetailViewController.swift */; };
 		DF2509731A9A93C9009876A1 /* NewTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2509721A9A93C8009876A1 /* NewTweetViewController.swift */; };
+		DF6ECF211A9AF28F009A5E71 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = DF6ECF1E1A9AF28F009A5E71 /* favorite.png */; };
+		DF6ECF221A9AF28F009A5E71 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = DF6ECF1F1A9AF28F009A5E71 /* reply.png */; };
+		DF6ECF231A9AF28F009A5E71 /* retweet.png in Resources */ = {isa = PBXBuildFile; fileRef = DF6ECF201A9AF28F009A5E71 /* retweet.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		DF25096D1A9A61F9009876A1 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		DF2509701A9A74F8009876A1 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		DF2509721A9A93C8009876A1 /* NewTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTweetViewController.swift; sourceTree = "<group>"; };
+		DF6ECF1E1A9AF28F009A5E71 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = SOURCE_ROOT; };
+		DF6ECF1F1A9AF28F009A5E71 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = SOURCE_ROOT; };
+		DF6ECF201A9AF28F009A5E71 /* retweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retweet.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,9 @@
 		DF25093E1A993EC2009876A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DF6ECF1E1A9AF28F009A5E71 /* favorite.png */,
+				DF6ECF1F1A9AF28F009A5E71 /* reply.png */,
+				DF6ECF201A9AF28F009A5E71 /* retweet.png */,
 				DF25093F1A993EC2009876A1 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -266,8 +275,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF2509461A993EC2009876A1 /* Main.storyboard in Resources */,
+				DF6ECF221A9AF28F009A5E71 /* reply.png in Resources */,
 				DF25094B1A993EC2009876A1 /* LaunchScreen.xib in Resources */,
 				DF2509481A993EC2009876A1 /* Images.xcassets in Resources */,
+				DF6ECF231A9AF28F009A5E71 /* retweet.png in Resources */,
+				DF6ECF211A9AF28F009A5E71 /* favorite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

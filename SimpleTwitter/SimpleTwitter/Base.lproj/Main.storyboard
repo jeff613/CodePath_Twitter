@@ -45,12 +45,12 @@
         <scene sceneID="p4g-b0-m6V">
             <objects>
                 <tableViewController storyboardIdentifier="TweetsViewController" id="7QH-Qy-XY5" customClass="TweetsTableViewController" customModule="SimpleTwitter" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="22" sectionFooterHeight="22" id="Asz-4I-geB">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="146" sectionHeaderHeight="22" sectionFooterHeight="22" id="Asz-4I-geB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="130" id="TEc-ay-LdU" customClass="TweetTableViewCell" customModule="SimpleTwitter" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="146" id="TEc-ay-LdU" customClass="TweetTableViewCell" customModule="SimpleTwitter" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TEc-ay-LdU" id="jbU-vl-bW5">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -91,29 +91,65 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7m-gB-g9b">
+                                            <rect key="frame" x="64" y="117" width="16" height="18"/>
+                                            <state key="normal" backgroundImage="reply.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onReply:" destination="TEc-ay-LdU" eventType="touchUpInside" id="K5p-on-TVR"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfD-uc-Gx4">
+                                            <rect key="frame" x="134" y="117" width="19" height="18"/>
+                                            <state key="normal" backgroundImage="retweet.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onRetweet:" destination="TEc-ay-LdU" eventType="touchUpInside" id="CvK-gO-1Vp"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Tu-I2-ymx">
+                                            <rect key="frame" x="207" y="117" width="16" height="18"/>
+                                            <state key="normal" backgroundImage="favorite.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onFavorite:" destination="TEc-ay-LdU" eventType="touchUpInside" id="dTe-Cd-f3I"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="lkq-gp-6eW" firstAttribute="trailing" secondItem="jbU-vl-bW5" secondAttribute="trailingMargin" id="4dD-Ig-TOU"/>
                                         <constraint firstItem="z0C-QT-9X3" firstAttribute="trailing" secondItem="jbU-vl-bW5" secondAttribute="trailingMargin" id="4qT-e1-tjR"/>
                                         <constraint firstItem="DQe-lC-hxi" firstAttribute="top" secondItem="jbU-vl-bW5" secondAttribute="topMargin" id="7IX-1Q-gRE"/>
+                                        <constraint firstItem="MfD-uc-Gx4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lkq-gp-6eW" secondAttribute="bottom" constant="5" id="9Gz-T8-jLr"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="3Sd-Ni-4S6" secondAttribute="trailing" id="Lvg-x7-Ros"/>
                                         <constraint firstItem="3Sd-Ni-4S6" firstAttribute="leading" secondItem="DQe-lC-hxi" secondAttribute="trailing" constant="8" id="N8z-jB-JHZ"/>
+                                        <constraint firstItem="0Tu-I2-ymx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lkq-gp-6eW" secondAttribute="bottom" constant="5" id="PFf-pP-0e0"/>
                                         <constraint firstItem="3Sd-Ni-4S6" firstAttribute="top" secondItem="jbU-vl-bW5" secondAttribute="topMargin" id="Qbk-CB-Pe5"/>
                                         <constraint firstItem="lkq-gp-6eW" firstAttribute="top" secondItem="3Sd-Ni-4S6" secondAttribute="bottom" constant="1" id="Qwj-IF-iWl"/>
                                         <constraint firstItem="lkq-gp-6eW" firstAttribute="bottom" secondItem="jbU-vl-bW5" secondAttribute="bottomMargin" id="R3y-rM-gYb"/>
                                         <constraint firstItem="z0C-QT-9X3" firstAttribute="top" secondItem="jbU-vl-bW5" secondAttribute="topMargin" id="TAT-xX-z2e"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0Tu-I2-ymx" secondAttribute="bottom" constant="3" id="U2H-cw-49m"/>
                                         <constraint firstItem="lkq-gp-6eW" firstAttribute="leading" secondItem="DQe-lC-hxi" secondAttribute="trailing" constant="8" id="WKy-5S-oJ1"/>
+                                        <constraint firstItem="MfD-uc-Gx4" firstAttribute="leading" secondItem="a7m-gB-g9b" secondAttribute="trailing" constant="54" id="XC9-hJ-KwM"/>
                                         <constraint firstItem="3Sd-Ni-4S6" firstAttribute="trailing" secondItem="jbU-vl-bW5" secondAttribute="trailingMargin" id="Zff-bD-xbw"/>
                                         <constraint firstItem="3Sd-Ni-4S6" firstAttribute="top" secondItem="jbU-vl-bW5" secondAttribute="topMargin" id="aMV-am-m8V"/>
                                         <constraint firstItem="lkq-gp-6eW" firstAttribute="top" secondItem="3Sd-Ni-4S6" secondAttribute="bottom" constant="2" id="cCu-ez-AEY"/>
+                                        <constraint firstItem="0Tu-I2-ymx" firstAttribute="leading" secondItem="MfD-uc-Gx4" secondAttribute="trailing" constant="54" id="fdO-au-YGD"/>
                                         <constraint firstItem="3Sd-Ni-4S6" firstAttribute="leading" secondItem="DQe-lC-hxi" secondAttribute="trailing" constant="8" id="hQb-4l-O6Z"/>
+                                        <constraint firstItem="a7m-gB-g9b" firstAttribute="leading" secondItem="jbU-vl-bW5" secondAttribute="leadingMargin" constant="56" id="hXK-Mq-rCa"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="MfD-uc-Gx4" secondAttribute="bottom" constant="3" id="ixp-SK-JCZ"/>
                                         <constraint firstItem="lkq-gp-6eW" firstAttribute="trailing" secondItem="jbU-vl-bW5" secondAttribute="trailingMargin" id="nWx-po-xmy"/>
                                         <constraint firstItem="lkq-gp-6eW" firstAttribute="leading" secondItem="DQe-lC-hxi" secondAttribute="trailing" constant="8" id="nrM-uj-Ah9"/>
                                         <constraint firstItem="DQe-lC-hxi" firstAttribute="leading" secondItem="jbU-vl-bW5" secondAttribute="leadingMargin" id="pQK-2F-Yrf"/>
                                         <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="lkq-gp-6eW" secondAttribute="bottom" constant="2" id="pzw-HU-1b9"/>
                                         <constraint firstItem="z0C-QT-9X3" firstAttribute="leading" secondItem="3Sd-Ni-4S6" secondAttribute="trailing" constant="5" id="r8U-we-Ga8"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="a7m-gB-g9b" secondAttribute="bottom" constant="3" id="td6-xS-Vv7"/>
                                         <constraint firstItem="lkq-gp-6eW" firstAttribute="top" secondItem="3Sd-Ni-4S6" secondAttribute="bottom" constant="2" id="ukq-zt-bqG"/>
                                         <constraint firstItem="z0C-QT-9X3" firstAttribute="leading" secondItem="3Sd-Ni-4S6" secondAttribute="trailing" constant="5" id="v6U-dQ-BEZ"/>
+                                        <constraint firstItem="a7m-gB-g9b" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lkq-gp-6eW" secondAttribute="bottom" constant="5" id="vwp-P1-Q8m"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -365,4 +401,9 @@
             <point key="canvasLocation" x="1286" y="292"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="favorite.png" width="16" height="16"/>
+        <image name="reply.png" width="16" height="16"/>
+        <image name="retweet.png" width="19" height="16"/>
+    </resources>
 </document>

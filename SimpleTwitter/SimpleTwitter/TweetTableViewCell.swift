@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol TweetCellDelegate {
+    func onReply(tweet: Tweet?)
+}
+
 class TweetTableViewCell: UITableViewCell {
 
     @IBOutlet weak var NameLabel: UILabel!
@@ -16,6 +20,8 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet weak var TimeLabel: UILabel!
     
     var tweet: Tweet?
+    
+    var delegate: TweetCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +33,22 @@ class TweetTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    @IBAction func onReply(sender: AnyObject) {
+        delegate?.onReply(tweet)
+    }
 
+    @IBAction func onRetweet(sender: AnyObject) {
+        if let id = tweet?.id {
+            TwitterClient.sharedInstance.retweet(id, callback: nil)
+        }
+    }
+    
+    @IBAction func onFavorite(sender: AnyObject) {
+        if let id = tweet?.id {
+            TwitterClient.sharedInstance.favorite(id, callback: nil)
+        }
+    }
+    
     func setup(t: Tweet) {
         tweet = t
         NameLabel.text = tweet?.user?.name

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TweetsTableViewController: UITableViewController {
+class TweetsTableViewController: UITableViewController, TweetCellDelegate {
 
     var tweets: [Tweet] = []
     
@@ -78,8 +78,15 @@ class TweetsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as TweetTableViewCell
         
         cell.setup(tweets[indexPath.row])
+        cell.delegate = self
         
         return cell
+    }
+    
+    func onReply(tweet: Tweet?) {
+        var vc = storyboard?.instantiateViewControllerWithIdentifier("NewTweetView") as NewTweetViewController
+        vc.replyTweet = tweet
+        presentViewController(vc, animated: true, completion: nil)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
