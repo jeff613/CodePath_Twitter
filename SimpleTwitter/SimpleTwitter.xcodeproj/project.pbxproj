@@ -24,6 +24,11 @@
 		DF6ECF211A9AF28F009A5E71 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = DF6ECF1E1A9AF28F009A5E71 /* favorite.png */; };
 		DF6ECF221A9AF28F009A5E71 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = DF6ECF1F1A9AF28F009A5E71 /* reply.png */; };
 		DF6ECF231A9AF28F009A5E71 /* retweet.png in Resources */ = {isa = PBXBuildFile; fileRef = DF6ECF201A9AF28F009A5E71 /* retweet.png */; };
+		DF6ECF251AA2C041009A5E71 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6ECF241AA2C041009A5E71 /* ContainerViewController.swift */; };
+		DF6ECF291AA3DD25009A5E71 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6ECF281AA3DD25009A5E71 /* MenuViewController.swift */; };
+		DF6ECF2B1AA3DEFE009A5E71 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6ECF2A1AA3DEFE009A5E71 /* MenuTableViewCell.swift */; };
+		DF6ECF2D1AA3FA2D009A5E71 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6ECF2C1AA3FA2D009A5E71 /* ProfileViewController.swift */; };
+		DF6ECF2F1AA415FC009A5E71 /* MentionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6ECF2E1AA415FC009A5E71 /* MentionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +66,11 @@
 		DF6ECF1E1A9AF28F009A5E71 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorite.png; sourceTree = SOURCE_ROOT; };
 		DF6ECF1F1A9AF28F009A5E71 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = SOURCE_ROOT; };
 		DF6ECF201A9AF28F009A5E71 /* retweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retweet.png; sourceTree = SOURCE_ROOT; };
+		DF6ECF241AA2C041009A5E71 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		DF6ECF281AA3DD25009A5E71 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		DF6ECF2A1AA3DEFE009A5E71 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		DF6ECF2C1AA3FA2D009A5E71 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DF6ECF2E1AA415FC009A5E71 /* MentionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +198,11 @@
 				DF25096D1A9A61F9009876A1 /* TweetTableViewCell.swift */,
 				DF2509701A9A74F8009876A1 /* TweetDetailViewController.swift */,
 				DF2509721A9A93C8009876A1 /* NewTweetViewController.swift */,
+				DF6ECF241AA2C041009A5E71 /* ContainerViewController.swift */,
+				DF6ECF281AA3DD25009A5E71 /* MenuViewController.swift */,
+				DF6ECF2A1AA3DEFE009A5E71 /* MenuTableViewCell.swift */,
+				DF6ECF2C1AA3FA2D009A5E71 /* ProfileViewController.swift */,
+				DF6ECF2E1AA415FC009A5E71 /* MentionsViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -332,11 +347,16 @@
 			files = (
 				DF2509681A996626009876A1 /* User.swift in Sources */,
 				DF25096C1A99B100009876A1 /* TweetsTableViewController.swift in Sources */,
+				DF6ECF2B1AA3DEFE009A5E71 /* MenuTableViewCell.swift in Sources */,
+				DF6ECF251AA2C041009A5E71 /* ContainerViewController.swift in Sources */,
 				DF25096A1A996632009876A1 /* Tweet.swift in Sources */,
+				DF6ECF2F1AA415FC009A5E71 /* MentionsViewController.swift in Sources */,
+				DF6ECF291AA3DD25009A5E71 /* MenuViewController.swift in Sources */,
 				DF2509431A993EC2009876A1 /* ViewController.swift in Sources */,
 				DF2509651A994054009876A1 /* TwitterClient.swift in Sources */,
 				DF2509711A9A74F8009876A1 /* TweetDetailViewController.swift in Sources */,
 				DF2509411A993EC2009876A1 /* AppDelegate.swift in Sources */,
+				DF6ECF2D1AA3FA2D009A5E71 /* ProfileViewController.swift in Sources */,
 				DF2509731A9A93C9009876A1 /* NewTweetViewController.swift in Sources */,
 				DF25096E1A9A61F9009876A1 /* TweetTableViewCell.swift in Sources */,
 			);

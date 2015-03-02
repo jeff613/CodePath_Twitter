@@ -17,6 +17,10 @@ class User {
     var screenName: String?
     var profileImageUrl: String?
     var tagLine: String?
+    var tweetsCount: Int?
+    var followersCount: Int?
+    var followsCount: Int?
+    var profileBGImageUrl: String?
     
     var dict: NSDictionary
     
@@ -27,6 +31,10 @@ class User {
         screenName = dict["screen_name"] as? String
         profileImageUrl = dict["profile_image_url"] as? String
         tagLine = dict["description"] as? String
+        tweetsCount = dict["listed_count"] as? Int
+        followersCount = dict["followers_count"] as? Int
+        followsCount = dict["friends_count"] as? Int
+        profileBGImageUrl = dict["profile_background_image_url"] as? String
     }
     
     func logout() {

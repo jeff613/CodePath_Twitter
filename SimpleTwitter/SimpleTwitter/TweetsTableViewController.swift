@@ -51,10 +51,6 @@ class TweetsTableViewController: UITableViewController, TweetCellDelegate {
         presentViewController(vc, animated: true, completion: nil)
     }
 
-    @IBAction func onLogout(sender: AnyObject) {
-        User.currentUser?.logout()
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -89,12 +85,22 @@ class TweetsTableViewController: UITableViewController, TweetCellDelegate {
         presentViewController(vc, animated: true, completion: nil)
     }
     
+    func onGotoProfile(user: User?) {
+        let profileView = storyboard?.instantiateViewControllerWithIdentifier("ProfileView") as ProfileViewController
+        navigationController?.pushViewController(profileView, animated: true)
+        profileView.user = user
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var vc = storyboard?.instantiateViewControllerWithIdentifier("TweetDetailView") as TweetDetailViewController
         vc.tweet = tweets[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+    @IBAction func onMenu(sender: AnyObject) {
+        let menuToggler = navigationController?.parentViewController as ContainerViewController
+        menuToggler.toggleMenu()
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

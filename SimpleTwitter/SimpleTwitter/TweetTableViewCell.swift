@@ -10,6 +10,7 @@ import UIKit
 
 protocol TweetCellDelegate {
     func onReply(tweet: Tweet?)
+    func onGotoProfile(user: User?)
 }
 
 class TweetTableViewCell: UITableViewCell {
@@ -26,6 +27,9 @@ class TweetTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        let tap = UITapGestureRecognizer(target: self, action: "onTapProfileImage:")
+        ProfileImageView.addGestureRecognizer(tap)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -33,6 +37,11 @@ class TweetTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func onTapProfileImage(tap: UITapGestureRecognizer) {
+        delegate?.onGotoProfile(tweet?.user)
+    }
+    
     @IBAction func onReply(sender: AnyObject) {
         delegate?.onReply(tweet)
     }

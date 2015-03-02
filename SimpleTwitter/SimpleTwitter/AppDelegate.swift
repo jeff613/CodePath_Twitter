@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let user = User.currentUser {
             println("user detected in storage: \(user.name)")
             
-            setDefaultViewController("MainNavigation")
+            setDefaultViewController("MainContainer")
         }
         
         return true

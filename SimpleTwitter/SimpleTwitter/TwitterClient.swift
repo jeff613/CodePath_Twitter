@@ -42,7 +42,7 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
     func openURL(url: NSURL) {
         TwitterClient.sharedInstance.fetchAccessTokenWithPath("oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential(queryString: url.query), success: { (credential: BDBOAuth1Credential!
             ) -> Void in
-            println("Got the access token: \(credential.token)")
+            //println("Got the access token: \(credential.token)")
             TwitterClient.sharedInstance.requestSerializer.saveAccessToken(credential)
             
             TwitterClient.sharedInstance.GET("1.1/account/verify_credentials.json", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
@@ -65,6 +65,17 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
     func getHomeTweets(callback: (tweets: [Tweet]?, error: NSError?) -> Void) {
         GET("1.1/statuses/home_timeline.json", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             //println("home: \(response)")
+            var tweets = Tweet.tweetsWithArray(response as [NSDictionary])
+            callback(tweets: tweets, error: nil)
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                println("error getting user: \(error)")
+                callback(tweets: nil, error: error)
+        })
+    }
+    
+    func getMentionTweets(callback: (tweets: [Tweet]?, error: NSError?) -> Void) {
+        GET("1.1/statuses/mentions_timeline.json", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            //println("mention: \(response)")
             var tweets = Tweet.tweetsWithArray(response as [NSDictionary])
             callback(tweets: tweets, error: nil)
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
